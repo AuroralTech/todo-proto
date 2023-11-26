@@ -2,7 +2,9 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-option go_package = "pkg/generated";
+option go_package = "pkg/grpc/generated";
+
+package todo;
 
 // TodoItemは一つのタスクを表します。
 message TodoItem {
