@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
+import "validate/validate.proto";
 
 option go_package = "pkg/grpc/generated";
 
@@ -11,7 +12,7 @@ message TodoItem {
   // タスクの一意なID
   uint64 id = 1;
   // タスクの内容
-  string task = 2;
+  string task = 2 [ (validate.rules).string.min_len = 1 ];
   // タスクが完了したかどうか
   bool is_completed = 3;
 }
